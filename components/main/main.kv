@@ -1,2 +1,38 @@
-<Main>:
-    FloatLayout:
+<Main>
+    cols: 2
+    TextInput:
+        id: Input_Text
+        multiline: False
+        text: root.mainText
+    Image:
+        source: '../../img/shield.png'
+        allow_stretch: True
+    Button:
+        id: Function_Button
+        text: root.funButtonText
+        on_release: root.process_text()
+    Label:
+        id: De_cypher
+        text: root.resultText
+        multiline: True
+    Label:
+        id: ShowSlider
+        text: str(root.keyCont)
+    Slider:
+        id: Slider1
+        min: -26
+        max: 26
+        orientation: "horizontal"
+        step: 1
+        value: -3
+        on_value: root.show_slider(self)
+        show_value: root.show_slider(self)
+    Button:
+        id: Exchange_Texts
+        text: root.exButtonText
+        on_release: root.exchange_texts()
+
+    Button:
+        id: Random_Key
+        text: root.randVarButtonText
+        on_release: root.random_key()
